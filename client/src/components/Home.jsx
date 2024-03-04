@@ -11,7 +11,7 @@ function Home() {
       .get("http://localhost:3001/get")
       .then((response) => setodos(response.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, 2000);
   let handleEdit = (id) => {
     axios
       .put("http://localhost:3001/update/" + id)
@@ -31,8 +31,8 @@ function Home() {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
-      <h2>Todolist</h2>
+    <div className="w-full h-screen bg-red-700">
+      <h2 className="">Todolist</h2>
       <Create />
       {todos.length === 0 ? (
         <div>
